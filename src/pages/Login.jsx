@@ -1,14 +1,17 @@
 import React from "react";
 import { Row, Col, Form, Input, Button, Card } from "antd";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   const onFinish = (values) => {
     console.log("Login data:", values);
+    navigate("/Dashboard");
   };
 
   return (
     <div className="form-container">
-      <Card title="Login" style={{ width: 300 }}>
+      <Card title="Login" style={{ width: 800 }}>
         <Form name="login" onFinish={onFinish} layout="vertical">
           <Form.Item
             label="Username"
