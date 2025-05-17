@@ -11,7 +11,7 @@ const LoginPage = () => {
 
   return (
     <div className="form-container">
-      <Card title="Login" style={{ width: 800 }}>
+      <Card title="Login" style={{ width: 400 }}>
         <Form name="login" onFinish={onFinish} layout="vertical">
           <Form.Item
             label="Username"

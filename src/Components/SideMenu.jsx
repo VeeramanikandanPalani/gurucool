@@ -9,7 +9,11 @@ import {
   VideoCameraOutlined,
 } from "@ant-design/icons";
 
+import { useNavigate } from "react-router-dom";
+
 const SideMenu = (props) => {
+  const navigate = useNavigate();
+
   const { collapse } = props;
   return (
     <Sider trigger={null} collapsible collapsed={collapse}>
@@ -18,28 +22,34 @@ const SideMenu = (props) => {
         theme="dark"
         mode="inline"
         defaultSelectedKeys={["1"]}
+        onClick={({ key }) => {
+          navigate(key);
+        }}
         items={[
           {
-            key: "1",
+            key: "/Dashboard",
             icon: <UserOutlined />,
             label: "Course Catelogue",
           },
           {
-            key: "2",
+            key: "/MyEvents",
             icon: <VideoCameraOutlined />,
             label: "My Events",
           },
           {
-            key: "3",
+            key: "/TeamZone",
             icon: <UploadOutlined />,
             label: "Teams Learning Zone",
           },
           {
-            key: "4",
+            key: "/TrainerZone",
             icon: <UploadOutlined />,
             label: "Trainer Zone",
           },
         ]}
+        style={{
+          marginTop: "30px",
+        }}
       />
     </Sider>
   );
